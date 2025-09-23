@@ -91,7 +91,7 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+// | TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
 // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
@@ -105,22 +105,22 @@
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   |     |     | U P |     |     |      |
-// | SHFT |VOLUP|VOLDN|BRIUP|BRIDN|     |   |     | LFT | DWN | RGT |     | ESC  |
+// | TAB  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
+// | CTRL |VOLUP|BRIUP|BTCLR| BT1 | BT2 |   |CAPS |     | U P |  [  |  ]  |      |
+// | SHFT |VOLDN|BRIDN| BT3 | BT4 | BT5 |   | DEL | LFT | DWN | RGT |     | ESC  |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         display-name = "Dump";
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8   &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &trans   &trans   &kp UP   &trans    &trans &trans
-   &kp LSHFT  &kp C_VOL_UP &kp C_VOL_DN &kp C_BRI_UP &kp C_BRI_DN &trans         &trans   &kp LEFT &kp DOWN &kp RIGHT &trans &kp ESC
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp LALT
+   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4          &kp N5         &kp N6      &kp N7   &kp N8   &kp N9    &kp N0   &kp BSPC
+   &kp LCTRL  &kp C_VOL_UP &kp C_BRI_UP &bt BT_CLR   &bt BT_SEL 0    &bt BT_SEL 1   &kp CAPS    &trans   &kp UP   &kp LBKT  &kp RBKT &kp DELETE
+   &kp LSHFT  &kp C_VOL_DN &kp C_BRI_DN &bt BT_SEL 2 &kp bt BT_SEL 3 &bt BT_SEL 4   &kp DELETE  &kp LEFT &kp DOWN &kp RIGHT &trans   &kp ESC
+                          	            &kp LGUI     &trans          &kp SPACE      &kp RET     &trans   &kp LALT
                         >;
                 };
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
+// | TAB  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
