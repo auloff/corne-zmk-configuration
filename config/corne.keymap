@@ -16,11 +16,9 @@
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
+            quick-tap-ms = <180>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-
-            quick-tap-ms = <180>;
             global-quick-tap;
         };
 
@@ -39,50 +37,166 @@
     combos {
         compatible = "zmk,combos";
 
-        left_bkt {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <4 3>;
+        // Цифры: вертикальные комбо верхний+средний ряд
+        combo_1 {
+            bindings = <&kp N1>;
+            key-positions = <1 13>;  // Q+A
             timeout-ms = <50>;
         };
 
-        right_bkt {
-            bindings = <&kp RBKT>;
-            key-positions = <7 8>;
+        combo_2 {
+            bindings = <&kp N2>;
+            key-positions = <2 14>;  // W+S
             timeout-ms = <50>;
         };
 
-        left_par {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <15 16>;
+        combo_3 {
+            bindings = <&kp N3>;
+            key-positions = <3 15>;  // E+D
             timeout-ms = <50>;
         };
 
-        right_par {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <19 20>;
+        combo_4 {
+            bindings = <&kp N4>;
+            key-positions = <4 16>;  // R+F
+            timeout-ms = <50>;
+        };
+
+        combo_5 {
+            bindings = <&kp N5>;
+            key-positions = <5 17>;  // T+G
+            timeout-ms = <50>;
+        };
+
+        combo_6 {
+            bindings = <&kp N6>;
+            key-positions = <6 18>;  // Y+H
+            timeout-ms = <50>;
+        };
+
+        combo_7 {
+            bindings = <&kp N7>;
+            key-positions = <7 19>;  // U+J
+            timeout-ms = <50>;
+        };
+
+        combo_8 {
+            bindings = <&kp N8>;
+            key-positions = <8 20>;  // I+K
+            timeout-ms = <50>;
+        };
+
+        combo_9 {
+            bindings = <&kp N9>;
+            key-positions = <9 21>;  // O+L
+            timeout-ms = <50>;
+        };
+
+        combo_0 {
+            bindings = <&kp N0>;
+            key-positions = <10 22>;  // P+;
             timeout-ms = <50>;
         };
 
         left_brace {
             bindings = <&kp LEFT_BRACE>;
-            key-positions = <27 28>;
+            key-positions = <8 9>;  // I+O (Ш+Щ)
             timeout-ms = <50>;
         };
 
         right_brace {
             bindings = <&kp RIGHT_BRACE>;
-            key-positions = <32 31>;
+            key-positions = <9 10>;  // O+P (Щ+З)
             timeout-ms = <50>;
         };
 
-        bac {
+        // Обратный слеш \ (на русском Ж+Д)
+        backslash {
             bindings = <&kp BACKSLASH>;
-            key-positions = <5 6>;
+            key-positions = <22 21>;  // ;+L (Ж+Д)
+            timeout-ms = <50>;
         };
 
+        // Pipe | (на русском Д+Л)
         pipe {
             bindings = <&kp PIPE>;
-            key-positions = <17 18>;
+            key-positions = <21 20>;  // L+K (Д+Л)
+            timeout-ms = <50>;
+        };
+
+        // Тильда ~ (на русском Й+Ц)
+        tilde {
+            bindings = <&kp TILDE>;
+            key-positions = <1 2>;  // Q+W (Й+Ц)
+            timeout-ms = <50>;
+        };
+
+        // Спецсимволы: вертикальные комбо средний+нижний ряд
+        combo_excl {
+            bindings = <&kp EXCL>;
+            key-positions = <13 25>;  // A+Z (Ф+Я)
+            timeout-ms = <50>;
+        };
+
+        combo_at {
+            bindings = <&kp AT>;
+            key-positions = <14 26>;  // S+X (Ы+Ч)
+            timeout-ms = <50>;
+        };
+
+        combo_hash {
+            bindings = <&kp HASH>;
+            key-positions = <15 27>;  // D+C (В+С)
+            timeout-ms = <50>;
+        };
+
+        combo_dollar {
+            bindings = <&kp DOLLAR>;
+            key-positions = <16 28>;  // F+V (А+М)
+            timeout-ms = <50>;
+        };
+
+        combo_percent {
+            bindings = <&kp PERCENT>;
+            key-positions = <17 29>;  // G+B (П+И)
+            timeout-ms = <50>;
+        };
+
+        combo_caret {
+            bindings = <&kp CARET>;
+            key-positions = <18 30>;  // H+N (Р+Т)
+            timeout-ms = <50>;
+        };
+
+        combo_ampersand {
+            bindings = <&kp AMPERSAND>;
+            key-positions = <19 31>;  // J+M (О+Ь)
+            timeout-ms = <50>;
+        };
+
+        combo_star {
+            bindings = <&kp STAR>;
+            key-positions = <20 32>;  // K+, (Л+Б)
+            timeout-ms = <50>;
+        };
+
+        combo_lpar {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <21 33>;  // L+. (Д+Ю)
+            timeout-ms = <50>;
+        };
+
+        combo_rpar {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <22 34>;  // ;+/ (Ж+.)
+            timeout-ms = <50>;
+        };
+
+        // DELETE на raise слое: BKSP + клавиша под ним
+        delete_key {
+            bindings = <&kp DELETE>;
+            key-positions = <11 23>;  // BKSP + клавиша под ним
+            timeout-ms = <50>;
         };
     };
 
@@ -92,44 +206,48 @@
                 default_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+// | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                        display-name = "Base";
+// Homerow mods: A=Shift, S=Ctrl, D=Alt, F=GUI | J=GUI, K=Alt, L=Ctrl, ;=Shift
+                        display-name = "MAIN";
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp LALT
+   &kp TAB        &kp Q         &kp W        &kp E        &kp R        &kp T      &kp Y     &kp U        &kp I        &kp O         &kp P            &kp BSPC
+   &kp LSHFT      &hm LSHFT A   &hm LCTRL S  &hm LALT D   &hm LGUI F   &kp G      &kp H     &hm RGUI J   &hm RALT K   &hm RCTRL L   &hm RSHFT SEMI   &kp SQT
+   &kp LCTRL      &kp Z         &kp X        &kp C        &kp V        &kp B      &kp N     &kp M        &kp COMMA    &kp DOT       &kp FSLH         &kp ESC
+                                             &kp LGUI     &mo 1        &kp SPACE  &kp RET   &mo 2        &kp LALT
                         >;
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   |     |     | U P |     |     |      |
-// | SHFT |VOLUP|VOLDN|BRIUP|BRIDN|     |   |     | LFT | DWN | RGT |     | ESC  |
+// |  TAB |  1  |  2  |  3  |  4  |  5  |   |     |     |     |     |     | BKSP |
+// | SHFT |  6  |  7  |  8  |  9  |  0  |   |  <- |  ↓  |  ↑  |  -> |     |      |
+// | CTRL |  +  |  -  |  *  |  /  |  =  |   |     |     |     |     |     | ESC  |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
-                        display-name = "Dump";
+// Цифры 1-5 на верхнем ряду, 6-0 на среднем, математические операторы на нижнем
+                        display-name = "NAVI";
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8   &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &trans   &trans   &kp UP   &trans    &trans &trans
-   &kp LSHFT  &kp C_VOL_UP &kp C_VOL_DN &kp C_BRI_UP &kp C_BRI_DN &trans         &trans   &kp LEFT &kp DOWN &kp RIGHT &trans &kp ESC
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp LALT
+   &kp TAB        &kp N1           &kp N2           &kp N3           &kp N4           &kp N5             &trans     &trans     &trans   &trans    &trans  &kp BSPC
+   &kp LSHFT      &kp N6           &kp N7           &kp N8           &kp N9           &kp N0             &kp LEFT   &kp DOWN   &kp UP   &kp RIGHT &trans  &trans
+   &kp LCTRL      &kp PLUS         &kp MINUS        &kp STAR         &kp FSLH         &kp EQUAL          &trans     &trans     &trans   &trans    &trans  &kp ESC
+                                                    &kp LGUI         &trans           &kp SPACE          &kp RET    &trans     &kp LALT
                         >;
                 };
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        display-name = "Bump";
+// |  TAB |     |  F1 |  F2 |  F3 |  F4 |   |RGBTOG| RGB+ | RGB- | HUE+ | HUE- | BKSP |
+// | SHFT |     |  F5 |  F6 |  F7 |  F8 |   | VOL+ | VOL- | MUTE | BRI+ | BRI- |      |
+// | CTRL |     |  F9 | F10 | F11 | F12 |   |BTCLR | BT0  | BT1  | BT2  | BT3  | ESC  |
+//                    | GUI |     | SPC |   | ENT  |      | ALT  |
+// TAB/SHFT/CTRL в первой колонке, F1-F12 смещены на 2 позиции вправо, ESC внизу справа
+// Комбо: BKSP + клавиша под ним = DELETE
+                        display-name = "FUNC";
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp LALT
+   &kp TAB    &trans    &kp F1   &kp F2    &kp F3    &kp F4        &rgb_ug RGB_TOG  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &kp BSPC
+   &kp LSHFT  &trans    &kp F5   &kp F6    &kp F7    &kp F8        &kp C_VOL_UP     &kp C_VOL_DN     &kp C_MUTE       &kp C_BRI_UP     &kp C_BRI_DN     &trans
+   &kp LCTRL  &trans    &kp F9   &kp F10   &kp F11   &kp F12       &bt BT_CLR       &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &kp ESC
+                                 &kp LGUI  &trans    &kp SPACE     &kp RET          &trans           &kp LALT
                         >;
                 };
 
